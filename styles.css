@@ -170,4 +170,44 @@ footer p {
         width: 100%;
         justify-content: center;
     }
+}
+
+/* Group card specific styles */
+.venue-card.type-group {
+    background-color: #f0f7ff;
+    border: 1px solid rgba(0, 123, 255, 0.1);
+    border-left: 4px solid #007bff;
+}
+
+.venue-card.type-group h2 {
+    color: #007bff;
+}
+
+.venue-card.type-group .venue-info p {
+    color: #495057;
+}
+
+.venue-card.type-group .link-button.website {
+    background-color: #007bff;
+}
+
+.venue-card.type-group .link-button.website:hover {
+    background-color: #0056b3;
+}
+
+.venue-card.type-group .link-button.discord {
+    background-color: #7289da;
+}
+
+.venue-card.type-group .link-button.discord:hover {
+    background-color: #5b6eae;
+}
+
+/* Venue card specific styles */
+.venue-card.type-venue {
+    border-left: 4px solid var(--primary-green);
+}
+
+.venue-card.type-venue h2 {
+    color: var(--primary-green);
 } 
