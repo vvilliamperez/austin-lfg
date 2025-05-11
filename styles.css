@@ -334,9 +334,17 @@ footer p {
 
 /* Venue card specific styles */
 .venue-card.type-venue {
-    border-left: 4px solid var(--primary-green);
+    background-color: var(--card-bg);
 }
 
 .venue-card.type-venue h2 {
     color: var(--primary-green);
+}
+
+.link-button.discord {
+    background-color: #7289da;
+}
+
+.link-button.discord:hover {
+    background-color: #5b6eae;
 } 
