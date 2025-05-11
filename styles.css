@@ -334,7 +334,9 @@ footer p {
 
 /* Venue card specific styles */
 .venue-card.type-venue {
-    background-color: var(--card-bg);
+    position: relative;
+    padding-left: 2rem;
+    border-left: 4px solid var(--primary-green);
 }
 
 .venue-card.type-venue h2 {
