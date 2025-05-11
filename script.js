@@ -64,4 +64,32 @@ function createParticles() {
 // Initialize particles when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     createParticles();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const venueCards = document.querySelectorAll('.venue-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const filter = button.getAttribute('data-filter');
+
+            venueCards.forEach(card => {
+                if (filter === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    if (card.classList.contains(`type-${filter}`)) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    });
 }); 
