@@ -1,0 +1,158 @@
+:root {
+    --primary-green: #2d5a27;
+    --dark-green: #1e3d1b;
+    --light-green: #e8f5e9;
+    --background-light: #ffffff;
+    --card-bg: #f8f9fa;
+    --text-dark: #2c3e50;
+    --text-muted: #6c757d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: white;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.venues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.venue-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(45, 90, 39, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.venue-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(45, 90, 39, 0.1);
+}
+
+.venue-card h2 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.venue-info p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.venue-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.link-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.link-button.website {
+    background-color: var(--primary-green);
+}
+
+.link-button.website:hover {
+    background-color: var(--dark-green);
+}
+
+.link-button.calendar {
+    background-color: #007bff;
+}
+
+.link-button.calendar:hover {
+    background-color: #0056b3;
+}
+
+.link-button.maps {
+    background-color: #6c757d;
+}
+
+.link-button.maps:hover {
+    background-color: #545b62;
+}
+
+.link-button i {
+    margin-right: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--light-green);
+    margin-top: 3rem;
+}
+
+footer p {
+    color: var(--text-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .venues-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .venue-links {
+        flex-direction: column;
+    }
+    
+    .link-button {
+        width: 100%;
+        justify-content: center;
+    }
+} 
