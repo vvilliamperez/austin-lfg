@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Typing animation
-const words = ['Geeks', 'Groups', 'Games', 'Guilds', 'Ghouls', 'Goblins', 'Gamers', 'Guildies', 'Grimoires', 'Golems', 'Gryphons', 'Gamemasters', 'Gremlins', 'Gauntlets', 'Gargoyles', 'Glaives', 'Gorgons', 'Guardians', 'Gladiators',];
+const words = ['Geeks', 'Groups', 'Games', 'Guilds', 'Ghouls', 'Goblins', 'Gamers', 'Guildies', 'Grimoires', 'Golems', 'Gryphons', 'Gamemasters', 'Gremlins'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
