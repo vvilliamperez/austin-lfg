@@ -40,23 +40,23 @@ function createParticles() {
     for (let i = 0; i < 40; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-        
+
         // Random size between 1px and 8px for more variety
         const size = Math.random() * 7 + 1;
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
-        
+
         // Random position
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.top = `${Math.random() * 100}%`;
-        
+
         // Random delay and duration for more natural movement
         particle.style.animationDelay = `${Math.random() * 5}s`;
         particle.style.animationDuration = `${Math.random() * 2 + 2}s`;
-        
+
         // Random opacity for more depth
         particle.style.opacity = `${Math.random() * 0.5 + 0.1}`;
-        
+
         particlesContainer.appendChild(particle);
     }
 }
@@ -95,7 +95,66 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Typing animation
-const words = ['Geeks', 'Groups', 'Games', 'Guilds', 'Ghouls', 'Goblins', 'Gamers', 'Guildies', 'Grimoires', 'Golems', 'Gryphons', 'Gamemasters', 'Gremlins', 'Gems', 'Goldsmiths', 'Giants', 'Gundren', 'Gnomes', 'Gold', 'Guthix'];
+const words = [
+    'Geeks',
+    'Groups', 
+    'Games', 
+    'Guilds', 
+    'Ghouls', 
+    'Goblins',
+    'Gamers',
+    'Guildies',
+    'Grimoires', 
+    'Golems', 
+    'Gryphons', 
+    'Gamemasters', 
+    'Gremlins', 
+    'Gems', 
+    'Goldsmiths', 
+    'Giants', 
+    'Gundren',
+    'Gnomes',
+    'Gold',
+    'Guthix',
+    'Gauntlets',
+    'Goo',
+    'Geralt',
+    'Gundam',
+    'Goosebumps',
+    'Gloomhaven',
+    'Galaga',
+    'Goths',
+    'Gimli',
+    'GLaDOS',
+    'Gohan',
+    'Goku',
+    'Gogeta',
+    'Grimdark',
+    'Griffith',
+    'Gardevoir', 
+    'Gengar',
+    'Garchomp',
+    'Goliath',
+    'Geth',
+    'Gnosis', 
+    'Gallifrey',
+    'Garrus',
+    'Giygas',
+    'Gwyndolin',
+    'Gwynevere',
+    'G-Man',
+    'Garnet',
+    'Gil',
+    'Gilgamesh',
+    'Githyanki',
+    'Godrick',
+    'Godwyn',
+    'Gensokyo',
+    'Gendo',
+    'Genjutsu',
+    'Goombas',
+    'Gaben',
+];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -106,7 +165,7 @@ let newWordDelay = 2000;
 function typeEffect() {
     const currentWord = words[wordIndex];
     const typingElement = document.querySelector('.typing-text');
-    
+
     if (isDeleting) {
         typingElement.textContent = currentWord.substring(0, charIndex - 1);
         charIndex--;
