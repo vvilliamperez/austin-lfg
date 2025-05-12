@@ -92,4 +92,42 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-}); 
+});
+
+// Typing animation
+const words = ['Geeks', 'Groups', 'Games', 'Guilds', 'Ghouls', 'Goblins', 'Gamers', 'Guildies', 'Grimoires', 'Golems', 'Gryphons', 'Gamemasters', 'Gremlins', 'Gauntlets', 'Gargoyles', 'Glaives', 'Gorgons', 'Guardians', 'Gladiators',];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingDelay = 100;
+let erasingDelay = 50;
+let newWordDelay = 2000;
+
+function typeEffect() {
+    const currentWord = words[wordIndex];
+    const typingElement = document.querySelector('.typing-text');
+    
+    if (isDeleting) {
+        typingElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+        typingDelay = erasingDelay;
+    } else {
+        typingElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+        typingDelay = 100;
+    }
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        typingDelay = newWordDelay;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typingDelay = 500;
+    }
+
+    setTimeout(typeEffect, typingDelay);
+}
+
+// Start the typing animation when the page loads
+document.addEventListener('DOMContentLoaded', typeEffect); 
