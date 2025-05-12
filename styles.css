@@ -408,4 +408,22 @@ footer p {
 @keyframes blink {
     0%, 100% { border-color: transparent; }
     50% { border-color: white; }
+}
+
+.venue-card.type-event {
+    border-color: #9C27B0;
+    background-color: #fef8ff;
+    border: 1px solid rgba(0, 123, 255, 0.1);
+    border-left: 4px solid #9C27B0;
+}
+
+
+.venue-card.type-event h2 {
+    color: #9C27B0;
+}
+
+.venue-card.type-event .event-date {
+    font-weight: bold;
+    color: #9C27B0;
+    margin-bottom: 10px;
 } 

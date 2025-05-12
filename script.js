@@ -90,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
+
+            // Check for expired events after filtering
+            checkExpiredEvents();
         });
     });
 });
@@ -189,4 +192,23 @@ function typeEffect() {
 }
 
 // Start the typing animation when the page loads
-document.addEventListener('DOMContentLoaded', typeEffect); 
+document.addEventListener('DOMContentLoaded', typeEffect);
+
+// Function to check and hide expired events
+function checkExpiredEvents() {
+    const today = new Date();
+    const eventCards = document.querySelectorAll('.venue-card.type-event:not(.hidden)');
+    
+    eventCards.forEach(card => {
+        const expiryDate = new Date(card.dataset.expiry);
+        if (today > expiryDate) {
+            card.classList.add('hidden');
+        }
+    });
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    checkExpiredEvents();
+    // ... any existing DOMContentLoaded code ...
+}); 
